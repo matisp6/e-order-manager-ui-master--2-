@@ -1,0 +1,234 @@
+@import "../../assets/styles/variables.scss";
+
+.fixed-navigation {
+  // position: sticky;
+  top: 0;
+  // z-index: 1000;
+  background-color: $primary-dark;
+  padding: 8px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 100%;
+  // overflow-x: auto;
+}
+
+.fixed-navigation__nav,
+.fixed-navigation__action {
+  display: flex;
+  // flex: 1; /* Daje równą możliwość rozszerzania obu kontenerów */
+  flex-basis: 100%; // Na mniejszych ekranach każdy kontener zajmuje pełną szerokość
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  min-width: 300px;
+   flex: 1 1 30%; // Każdy kontener może zająć przynajmniej 50% szerokości
+}
+.fixed-navigation__nav {
+  flex: 1 auto auto;
+  display: flex;
+  justify-content: flex-start; // Wyśrodkowanie elementów w kontenerze
+  align-items: center;
+  flex-wrap: nowrap;
+  // order: 2;
+}
+
+
+.fixed-navigation__action {
+  display: flex;
+  justify-content: flex-end; // Elementy wyrównane do prawej strony
+  align-items: center;
+  gap: 10px; // Ustawienie jednolitego odstępu między elementami
+}
+
+.fixed-navigation__logo {
+  font-size: $copy-large;
+  color: $white;
+  padding-right: 50px;
+  cursor: pointer;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  padding-left: 0;
+  margin-left: auto;
+}
+
+.fixed-navigation__nav {
+  &-link {
+    padding: 10px;
+    font-size: $copy-small;
+    color: $white;
+    cursor: pointer;
+  }
+  &-link:hover {
+    color: $hover;
+  }
+}
+
+.fixed-navigation__action {
+  &__list {
+    display: flex;
+    column-gap: 6px;
+  }
+
+  &__element {
+    display: flex;
+    align-items: center;
+    color: $white;
+    font-weight: 600;
+    margin-right: 10px;
+
+    &:last-child {
+      // margin-left: auto; // Wypycha przycisk 'Zaloguj' na koniec kontenera
+      margin-left: -16px;
+      margin-right: auto;
+    }
+  }
+
+  &-input {
+    height: 30px;
+  }
+
+  &-link {
+    // width: 40px;
+    padding: 10px;
+    color: $white;
+    text-decoration: none;
+    min-width: 50px;
+  
+    
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;  // Możesz dostosować szerokość modalu
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1050; // Upewnij się, że modal jest wyświetlany na wierzchu
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+  }
+  
+  .modal-header, .modal-footer {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .modal-header {
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .modal-footer {
+    border-top: 1px solid #ccc;
+  }
+  
+  
+  
+
+  .login {
+    width: 100%;
+  }
+
+  &-link:hover {
+    filter: brightness(0) saturate(100%) invert(69%) sepia(6%) saturate(1777%)
+      hue-rotate(135deg) brightness(94%) contrast(83%);
+    cursor: pointer;
+  }
+}
+
+
+.home-link {
+  text-decoration: none;
+}
+
+.cart-container {
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  gap: 5px; // Odstęp między ikoną a liczbą produktów
+  padding: 5px 10px; // Dodaje padding dla lepszego klikalności
+  // background-color: $button-background-color; // Tło przycisku, możesz dostosować kolor
+  border-radius: 5px; // Zaokrąglenie rogów
+  text-decoration: none; // Usunięcie podkreślenia tekstu
+
+  &:hover {
+    // background-color: $button-hover-background-color; // Zmiana tła przycisku przy najechaniu
+    cursor: pointer;
+  }
+}
+
+.search-icon {
+  width: 20px;  // Możesz dostosować szerokość ikony wyszukiwania
+  height: auto; // Utrzymuje proporcje ikony
+}
+
+.cart-icon {
+  width: 20px;  // Możesz dostosować szerokość ikony koszyka
+  height: auto; // Utrzymuje proporcje ikony
+}
+
+.fixed-navigation__action__element:not(:last-child) {
+  margin-right: 10px;  // Dodaje margines z prawej strony każdego elementu oprócz ostatniego
+}
+
+.fixed-navigation__nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Możesz dostosować odstęp między linkami */
+}
+
+.fixed-navigation__action__list {
+  gap: 6px; /* Zmniejszenie odstępu między elementami */
+}
+
+
+@media (max-width: 600px) {
+  .fixed-navigation__nav-links {
+    flex-direction: column;
+    gap: 10px; /* Mniejszy odstęp na urządzeniach mobilnych */
+  }
+}
+
+
+@media screen and (min-width: 300px) and (max-width: 700px) {
+  .fixed-navigation {
+    padding: 8px 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .search-icon, .cart-icon {
+    width: 15px; // Mniejsze ikony na urządzeniach mobilnych
+  }
+  .fixed-navigation__logo,
+  .fixed-navigation__nav-link,
+  .fixed-navigation__action-link {
+    font-size: smaller; /* Zmniejsza rozmiar czcionki */
+  }
+  .fixed-navigation {
+    padding: 5px 10px; /* Zmniejsza padding */
+  }
+}
+}
